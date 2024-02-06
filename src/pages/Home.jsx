@@ -77,11 +77,7 @@ const Home = () => {
   };
 
   React.useEffect(() => {
-    if (isMounted.current) {
-      getStatistic();
-    } else {
-      isMounted.current = true;
-    }
+    getStatistic();
   }, [page, toggleSort, sortByShort, sortByTarget, sortByCount]);
 
   if (!statistic) {
