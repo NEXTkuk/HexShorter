@@ -9,7 +9,7 @@ export const Pagination = ({ currentPage, setPage, totalPages }) => (
     onPageChange={(event) => setPage(event.selected + 1)}
     pageRangeDisplayed={1}
     pageCount={Math.floor(totalPages / 10)}
-    forcePage={currentPage - 1}
+    forcePage={currentPage}
     renderOnZeroPageCount={null}
   />
 );

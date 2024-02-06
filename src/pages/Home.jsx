@@ -18,6 +18,7 @@ const Home = () => {
   const [page, setPage] = React.useState(1);
 
   const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
   const getShort = async () => {
     try {
@@ -26,12 +27,13 @@ const Home = () => {
       });
 
       if (data.short) {
+        setError(false);
         setURL('https://front-test.hex.team/s/' + data.short);
         getStatistic();
       }
-      // console.log(data);
     } catch (error) {
-      console.log(error);
+      setError(true);
+      // console.log(error);
     }
   };
 
@@ -98,7 +100,7 @@ const Home = () => {
           <div className='short_input_wrapper'>
             <input
               type='text'
-              className='short_input'
+              className={error ? 'short_input error' : 'short_input'}
               placeholder='Cсылка, которую вы хотите сократить'
               value={URL}
               onChange={(e) => setURL(e.target.value)}
@@ -214,7 +216,7 @@ const Home = () => {
                 className={sortByCount ? 'link_counter reverse' : 'link_counter'}
                 onClick={() => toggleSort && setsortByCount(!sortByCount)}
               >
-                <b className='text'>Переходов</b>
+                <b className='text'>Переходы</b>
 
                 {toggleSort && (
                   <svg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -240,9 +242,11 @@ const Home = () => {
         </table>
       </div>
 
-      <div className='pagination_wrapper'>
-        <Pagination currentPage={page} setPage={setPage} totalPages={totalPages} />
-      </div>
+      {totalPages > 10 && (
+        <div className='pagination_wrapper'>
+          <Pagination currentPage={page} setPage={setPage} totalPages={totalPages} />
+        </div>
+      )}
     </>
   );
 };
