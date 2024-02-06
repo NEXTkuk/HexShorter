@@ -7,7 +7,7 @@
 - React Router Dom v6
 - SCSS
 
-Проект доступен по ссылке: https://
+Проект доступен по ссылке: https://hex-shorter.vercel.app/
 
 ### Cпособ запуска
 
