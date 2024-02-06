@@ -183,9 +183,9 @@ const Home = () => {
               <th className='link_id'>ID</th>
               <th
                 className={sortByShort ? 'link_short reverse' : 'link_short'}
-                onClick={() => setSortByShort(!sortByShort)}
+                onClick={() => toggleSort && setSortByShort(!sortByShort)}
               >
-                <b className='text'>Короткая ссылка</b>
+                <b className='text'>Короткая</b>
 
                 {toggleSort && (
                   <svg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -198,9 +198,9 @@ const Home = () => {
               </th>
               <th
                 className={sortByTarget ? 'link_targer reverse' : 'link_targer'}
-                onClick={() => setSortByTarget(!sortByTarget)}
+                onClick={() => toggleSort && setSortByTarget(!sortByTarget)}
               >
-                <b className='text'>Исходная ссылка</b>
+                <b className='text'>Исходная</b>
                 {toggleSort && (
                   <svg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
@@ -212,7 +212,7 @@ const Home = () => {
               </th>
               <th
                 className={sortByCount ? 'link_counter reverse' : 'link_counter'}
-                onClick={() => setsortByCount(!sortByCount)}
+                onClick={() => toggleSort && setsortByCount(!sortByCount)}
               >
                 <b className='text'>Переходов</b>
 

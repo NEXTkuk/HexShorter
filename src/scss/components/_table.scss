@@ -28,7 +28,23 @@ table {
         width: 40%;
       }
       &.link_counter {
+        text-align: center;
         width: 15%;
+      }
+
+      @media (max-width: 768px) {
+        &.link_id {
+          width: 5%;
+        }
+        &.link_short {
+          width: 30%;
+        }
+        &.link_targer {
+          width: 30%;
+        }
+        &.link_counter {
+          width: 25%;
+        }
       }
     }
 

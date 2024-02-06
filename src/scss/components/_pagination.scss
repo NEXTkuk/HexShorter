@@ -33,4 +33,17 @@
       color: #fff;
     }
   }
+
+  @media (max-width: 560px) {
+    li {
+      display: none;
+    }
+
+    li.selected,
+    li.break,
+    li.previous,
+    li.next {
+      display: inline-block;
+    }
+  }
 }
