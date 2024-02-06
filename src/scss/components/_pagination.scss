@@ -1,0 +1,36 @@
+.pagination_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  li {
+    display: inline-block;
+
+    a {
+      user-select: none;
+      text-align: center;
+      width: 45px;
+      line-height: 45px;
+      height: 45px;
+      border: 2px solid #68a4cf;
+      border-radius: 30px;
+      margin-left: 10px;
+      cursor: pointer;
+      display: inline-block;
+      color: #fff;
+      font-weight: 600;
+
+      &:hover {
+        background-color: #68a4cf;
+        color: #fff;
+      }
+    }
+  }
+
+  li.selected {
+    a {
+      background-color: #68a4cf;
+      color: #fff;
+    }
+  }
+}

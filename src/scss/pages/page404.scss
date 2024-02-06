@@ -1,0 +1,50 @@
+.b-404 {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  .top {
+    img {
+      display: block;
+      margin: 0 auto;
+
+      max-width: 60%;
+      object-fit: cover;
+      -o-object-fit: cover;
+
+      @media screen and (max-width: 800px) {
+        max-width: 100%;
+      }
+    }
+    margin-bottom: 50px;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .ooops {
+      font-size: 3em;
+      font-weight: 600;
+    }
+
+    .descr {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .btn-back {
+      padding-top: 1em;
+      padding-bottom: 1em;
+
+      span {
+        font-size: 60px;
+        color: #fff;
+      }
+    }
+  }
+}

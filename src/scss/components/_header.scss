@@ -1,0 +1,64 @@
+header {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+
+  background-color: #1f1d2b;
+
+  z-index: 10;
+  user-select: none;
+
+  .container {
+    padding: 30px 35px;
+
+    @media (min-width: 700px) {
+      padding: 30px 35px;
+    }
+  }
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.b-head {
+  display: flex;
+  align-items: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  justify-content: space-between;
+  min-height: 40px;
+
+  .logo {
+    margin-right: 1.875rem;
+    color: #68a4cf;
+    font-weight: 600;
+    cursor: pointer;
+    // pointer-events: none;
+  }
+}
+
+.user {
+  &-settings {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    .elem-enter-buttons {
+      padding: 10px;
+      a {
+        color: #fff;
+      }
+    }
+
+    .btn__sign-in {
+      cursor: pointer;
+    }
+  }
+}

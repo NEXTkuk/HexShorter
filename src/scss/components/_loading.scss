@@ -1,0 +1,43 @@
+.loading-spinner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+}
+
+.loading-spinner div {
+  position: absolute;
+  animation: test 1s linear infinite;
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+  box-shadow: 0 4px 0 0 #68a4cf;
+  transform-origin: 80px 82px;
+}
+
+.loading-spinner {
+  width: 100%;
+  height: calc(100vh - 174px);
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+@keyframes test {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

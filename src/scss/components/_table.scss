@@ -1,0 +1,133 @@
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  table-layout: fixed;
+
+  thead {
+    th {
+      border-bottom: 2px solid #414141;
+      user-select: none;
+      cursor: pointer;
+
+      svg {
+        margin-left: 8px;
+
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      &.link_id {
+        width: 5%;
+      }
+      &.link_short {
+        width: 30%;
+      }
+      &.link_targer {
+        width: 40%;
+      }
+      &.link_counter {
+        width: 15%;
+      }
+    }
+
+    th:nth-child(1) {
+      cursor: default;
+    }
+
+    th.reverse {
+      svg {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.171);
+      }
+    }
+    td {
+      position: relative;
+      &:hover {
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: -9999px;
+          bottom: -9999px;
+          background-color: rgba(255, 255, 255, 0.096);
+          z-index: -1;
+        }
+      }
+    }
+
+    .link_counter {
+      text-align: center;
+    }
+  }
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.068);
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+}
+
+.loader_wrapper {
+  &.hidden {
+    .loader {
+      display: none;
+    }
+    border-bottom: 4px solid transparent;
+  }
+
+  .loader {
+    overflow: hidden;
+    display: block;
+    height: 4px;
+    z-index: 0;
+    background-color: rgb(72, 101, 124);
+    position: relative;
+
+    .progress-bar {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      top: 0px;
+      transition: transform 0.2s linear 0s;
+      transform-origin: left center;
+      background-color: rgb(144, 202, 249);
+      width: auto;
+      animation: 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) 0s infinite normal none running anim;
+    }
+  }
+}
+
+@keyframes anim {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
